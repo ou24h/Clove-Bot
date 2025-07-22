@@ -1,7 +1,6 @@
-const { verifyKeyMiddleware } = require('discord-interactions');
 const express = require('express');
+const { verifyKeyMiddleware } = require('discord-interactions');
 const app = express();
-
 app.use(express.json());
 
 app.post('/api/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), (req, res) => {
